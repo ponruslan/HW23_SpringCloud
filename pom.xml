@@ -9,16 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0</version>
 
-    <properties>
-        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
-        <spring-cloud-dependencies.version>Hoxton.SR1</spring-cloud-dependencies.version>
-        <spring-cloud-starter-eureka.version>1.4.7.RELEASE</spring-cloud-starter-eureka.version>
-        <spring-cloud-starter-feign.version>1.4.7.RELEASE</spring-cloud-starter-feign.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-
     <modules>
         <module>eureka-server</module>
         <module>movie-service</module>
@@ -26,4 +16,50 @@
         <module>review-service</module>
     </modules>
 
+    <properties>
+
+        <commons-config.version>1.10</commons-config.version>
+        <rxjava.version>1.2.10</rxjava.version>
+
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <spring-cloud-dependencies.version>Hoxton.SR8</spring-cloud-dependencies.version>
+        <spring-cloud-starter-eureka.version>1.4.7.RELEASE</spring-cloud-starter-eureka.version>
+        <spring-cloud-starter-netflix-zuul.version>2.2.5.RELEASE</spring-cloud-starter-netflix-zuul.version>
+        <spring-cloud-starter-feign.version>1.4.7.RELEASE</spring-cloud-starter-feign.version>
+        <spring-boot-starter-web.version>2.3.4.RELEASE</spring-boot-starter-web.version>
+        <spring-boot-starter-data-jpa.version>2.3.4.RELEASE</spring-boot-starter-data-jpa.version>
+        <spring-boot-maven-plugin.version>2.3.4.RELEASE</spring-boot-maven-plugin.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
